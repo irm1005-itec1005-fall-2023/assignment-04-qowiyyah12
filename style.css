@@ -40,17 +40,109 @@ main {
   justify-content: center;
   align-items: center;
 }
-
+*{
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+  border-color: #1d3557;
+  border-width: 20px;
+}
+.container{
+  width:100%;
+  min-height: 100vh;
+  border-width: 20px;
+  background-color: antiquewhite;
+  border-color: rgb(214, 122, 10);
+  padding: 10px;
+}
+input{
+  flex: 1;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  background-color: bisque;
+}
+button{
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: rgb(218, 124, 10);
+}
+.todolist-app{
+  width: 100%;
+  max-width: 1250px;
+  background-color: antiquewhite;
+  margin: 100px auto 20px;
+  padding: 40;
+  border-radius: 20px;
+  box-shadow: 5px 5px 5px 4px rgba(0, 0, 0.2);
+}
 
 /****** Screen reader text utility clsas *******/
-.sr-only {
+.sr-only{
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+}
+
+.todolist-app h2{
+  text-align: center;
+  text-shadow: 1px 1px 2px black;
+  margin-bottom: 10px;
+  color: antiquewhite;
+}
+.todolist-app h2 img{
+  margin-left: 600px;
+}
+.row{
+  align-items: center;
+  padding-left: 500px;
+  padding-bottom: 10px;
+}
+ul li{
+  list-style: none;
+  font-size: 25px;
+  padding-left: 40px;
+  padding: 10px;
+  position: relative;
+  cursor: pointer;
+}
+ul li::before{
   position: absolute;
   width: 1px;
   height: 1px;
   padding: 0;
   margin: -1px;
   overflow: hidden;
-  clip: rect(0, 0, 0, 0);
+  clip: rect(0,0,0);
   white-space: nowrap;
   border-width: 0;
+  height: 20px;
+  width: 20px;
+  border-radius: 5px;
+  background-image: url(images/unchecked\ icon.jpeg);
+  background-size: contain;
+  background-position: left;
+}
+ul li.checked{
+color: blanchedalmond;
+text-decoration: line-through;
+}
+ul li.checked::before{
+  background-image: url(images/unchecked\ icon.jpeg);
+}
+ul li span{
+  position: absolute;
+  right: 0;
+  width: 40px;
+  color: blanchedalmond;
+  line-height: 40px;
+  text-align: center;
+}
+ul li span:hover{
+  background: #e4b00700;
 }
